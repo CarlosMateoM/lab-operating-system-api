@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Catalog;
 use Illuminate\Support\Facades\Route;
 
 /*
