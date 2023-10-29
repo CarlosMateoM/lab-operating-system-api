@@ -59,6 +59,19 @@ class AuthController extends Controller
         ], 200);
     }
 
+
+    public function createAdditionalToken(Request $request)
+    {
+        $token = $request->user()->createToken($request->token_name);
+
+        return response()->json([
+            'status' => 'additional token created succesfully',
+            'token' => $token
+        ], 200);
+    }
+
+
+
     public function expireToken(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
